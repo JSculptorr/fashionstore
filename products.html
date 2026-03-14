@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Товар</title>
+<link rel="stylesheet" href="JSculptor.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <div class="nav-back">
+  <button onclick="goBackToCatalog()">
+    ← Назад в каталог
+  </button>
+</div>
+
+<div class="product-page">
+
+  <div class="product-wrapper">
+
+    
+    <div class="product-gallery">
+
+      <div class="product-thumbs" id="productThumbs"></div>
+
+      <div class="product-main">
+        <img id="productMainImg" src="">
+      </div>
+
+    </div>
+
+    
+    <div class="product-info">
+
+      <h1 id="productTitle"></h1>
+
+      <div class="product-price" id="productPrice"></div>
+
+      <div class="product-sizes">
+        <p>Размер</p>
+        <div class="sizes">
+          <button data-size="S">S</button>
+          <button data-size="M">M</button>
+          <button data-size="L">L</button>
+          <button data-size="XL">XL</button>
+        </div>
+      </div>
+
+      <div class="product-actions">
+
+        <div class="quantity">
+          <button id="minus">−</button>
+          <span id="qty">1</span>
+          <button id="plus">+</button>
+        </div>
+
+        <button id="addToCart" class="add-cart-btn">
+          В корзину
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   📦 ПОЛУЧАЕМ ТОВАР
+========================= */
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+let products = JSON.parse(localStorage.getItem("products")) || [];
+let product = products.find(p => p.id == id);
+
+if(!product){
+  document.body.innerHTML = "<h1 style='color:white;text-align:center;margin-top:100px'>Товар не найден</h1>";
+}
+
+
+/* =========================
+   🖼 ЗАПОЛНЯЕМ ДАННЫЕ
+========================= */
+
+document.getElementById("productTitle").textContent = product.title;
+document.getElementById("productPrice").textContent = product.price + "₽";
+document.getElementById("productMainImg").src = product.img;
+
+
+/* =========================
+   🖼 СОЗДАЁМ МИНИАТЮРЫ
+========================= */
+
+
+// Для примера создаём 3 одинаковых фото
+
+/* =========================
+   🖼 ФОТО И ГАЛЕРЕЯ
+========================= */
+
+const mainImg = document.getElementById("productMainImg");
+const thumbsContainer = document.getElementById("productThumbs");
+
+mainImg.src = product.images[0];
+
+product.images.forEach((src, index) => {
+
+  const img = document.createElement("img");
+  img.src = src;
+  img.classList.add("thumb-img");
+
+  if(index === 0) img.classList.add("active");
+
+  img.onclick = function(){
+    mainImg.src = this.src;
+
+    document.querySelectorAll(".thumb-img")
+      .forEach(t => t.classList.remove("active"));
+
+    this.classList.add("active");
+  };
+
+  thumbsContainer.appendChild(img);
+});
+/* =========================
+   ➕➖ КОЛИЧЕСТВО
+========================= */
+
+let qty = 1;
+const qtyEl = document.getElementById("qty");
+
+document.getElementById("plus").onclick = () => {
+  qty++;
+  qtyEl.textContent = qty;
+};
+
+document.getElementById("minus").onclick = () => {
+  if(qty > 1){
+    qty--;
+    qtyEl.textContent = qty;
+  }
+};
+
+
+/* =========================
+   🛒 ДОБАВЛЕНИЕ В КОРЗИНУ
+========================= */
+
+document.getElementById("addToCart").onclick = () => {
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existing = cart.find(item => item.name === product.title);
+
+  if(existing){
+    existing.qty += qty;
+  } else {
+    cart.push({
+      name: product.title,
+      price: product.price,
+      qty: qty
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  showNotification();
+};
+
+
+/* =========================
+   🔔 УВЕДОМЛЕНИЕ
+========================= */
+
+function showNotification(){
+
+  let note = document.createElement("div");
+  note.textContent = "✔ Товар добавлен в корзину";
+
+  note.style.position = "fixed";
+  note.style.bottom = "30px";
+  note.style.right = "30px";
+  note.style.background = "linear-gradient(90deg,#00ffff,#ff00ff)";
+  note.style.color = "#000";
+  note.style.padding = "15px 25px";
+  note.style.borderRadius = "8px";
+  note.style.fontWeight = "bold";
+  note.style.zIndex = "9999";
+  note.style.opacity = "0";
+  note.style.transition = "0.3s";
+
+  document.body.appendChild(note);
+
+  setTimeout(()=> note.style.opacity = "1", 50);
+
+  setTimeout(()=>{
+    note.style.opacity = "0";
+    setTimeout(()=> note.remove(), 300);
+  },2000);
+}
+
+
+/* =========================
+   👕 ВЫБОР РАЗМЕРА
+========================= */
+
+let selectedSize = null;
+
+document.querySelectorAll(".sizes button").forEach(btn => {
+
+  btn.addEventListener("click", function(){
+
+    document.querySelectorAll(".sizes button")
+      .forEach(b => b.classList.remove("active"));
+
+    this.classList.add("active");
+    selectedSize = this.dataset.size;
+
+  });
+
+});
+
+
+function goBackToCatalog(){
+  window.location.href = "product.html";
+}
+
+</script>
+</body>
+</html>
