@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FashionStore - Мужская одежда</title>
+  <link rel="stylesheet" href="JSculptor.css"> 
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<body> 
+  
+
+
+<div class="cyber-loader" id="cyberLoader">
+
+  <div class="loader-bg"></div>
+
+  <div class="loader-content">
+    <h1 class="loader-logo" data-text="JSculptor">
+      JSculptor
+    </h1>
+
+    <div class="loader-bar">
+      <div class="loader-progress" id="loaderProgress"></div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<header class="cyber-header">
+
+  <div class="cyber-logo">
+    <span>JSculptor</span>Store
+  </div>
+
+  <nav class="cyber-nav">
+    <a href="#home">Главная</a>
+    <a href="#catalog">Каталог</a>
+    <a href="#categories">Категории</a>
+    <a href="#sale">Скидки</a>
+  </nav>
+
+</header>
+
+
+ 
+    <div class="cart-icon" id="cart-btn">
+      <img class="imgg" src="18321.png" alt=""> <span class="cart-count">0</span>
+    </div>
+
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h2>Корзина</h2>
+    <span id="close-cart">✖</span>
+  </div>
+
+  <div class="cart-items"></div>
+
+  <div class="cart-footer">
+    <p>Итого: <span class="total-price">0₽</span></p>
+    <button class="checkout-btn">Оформить заказ</button>
+     <button id="clear-cart-btn" class="clear-cart-btn">Очистить корзину</button>
+  </div>
+</div>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+
+
+
+<section id="home" class="hero">
+  
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="7187929_Sport_Tennis_3840x2160.mp4" type="video/mp4">
+  </video>
+
+  <div class="video-overlay"></div>
+  <h1>Мужская коллекция 2026</h1>
+  <p>Свежий стиль, премиальные материалы, яркие образы.</p>
+  <a href="#catalog" class="hero-btn">Перейти в каталог</a>
+</section>  
+
+
+<section id="categories" class="categories">
+  <h2>Категории</h2>
+
+  <div class="categories-grid">
+    <a href="product.html?cat=all" class="category-btn active">Все</a>
+    <a href="product.html?cat=tshirt" class="category-btn">Футболки</a>
+    <a href="product.html?cat=hoodie" class="category-btn">Худи</a>
+    <a href="product.html?cat=jeans" class="category-btn">Джинсы</a>
+    <a href="product.html?cat=jacket" class="category-btn">Куртки</a>
+    <a href="product.html?cat=trousers" class="category-btn">Брюки</a>
+    <a href="product.html?cat=shirt" class="category-btn">Рубашки</a>
+    <a href="product.html?cat=shoes" class="category-btn">Кроссовки</a>
+    <a href="product.html?cat=accessory" class="category-btn">Аксессуары</a>
+  </div>
+</section>
+
+
+
+<section class="products-category">
+  <div class="products-category-grid"></div>
+</section>
+
+
+
+<section class="neon-divider">
+
+  <div class="divider-bg"></div>
+
+  <div class="divider-content">
+    <h2 class="divider-title" data-text="ENTER THE FUTURE">
+      ENTER THE FUTURE
+    </h2>
+
+    <p class="divider-sub">
+      Стиль. Энергия. Технологии.
+    </p>
+  </div>
+
+</section>
+
+
+
+<section id="sale" class="products sale-section fade-in">
+  <h2>Товары со скидкой</h2>
+
+  <div class="products-grid">
+
+    
+    <div class="product-card">
+      <div class="product-img"><img src="p3-removebg-preview (1).png"><span class="badge">Sale</span></div>
+      <h3>Футболка Premium</h3>
+      <p>Стильная мужская футболка, ограниченная серия.</p>
+      <div class="product-bottom">
+        <span class="price">2500₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="p3-removebg-preview (1).png"><span class="badge">Sale</span></div>
+      <h3>Худи Street</h3>
+      <p>Мягкая ткань, тёплый дизайн для улицы.</p>
+      <div class="product-bottom">
+        <span class="price">4500₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="p3-removebg-preview (1).png"><span class="badge">Sale</span></div>
+      <h3>Джинсы Modern</h3>
+      <p>Удобные и стильные джинсы для города.</p>
+      <div class="product-bottom">
+        <span class="price">4000₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="p3-removebg-preview (1).png"><span class="badge">Sale</span></div>
+      <h3>Куртка Urban</h3>
+      <p>Ветровка с яркой подкладкой, ограниченный выпуск.</p>
+      <div class="product-bottom">
+        <span class="price">6200₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="p3-removebg-preview (1).png"><span class="badge">Sale</span></div>
+      <h3>Рубашка Casual</h3>
+      <p>Лёгкая и стильная, идеально под джинсы.</p>
+      <div class="product-bottom">
+        <span class="price">2500₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><img src="p3-removebg-preview (1).png"><span class="badge">Sale</span></div>
+      <h3>Кроссовки Sport</h3>
+      <p>Лёгкие и прочные, идеально для прогулок.</p>
+      <div class="product-bottom">
+        <span class="price">5500₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="gender-split-section">
+
+  <div class="gender-block male">
+    <video autoplay muted loop playsinline>
+      <source src="6005022_Man_Young_3840x2160.mp4" type="video/mp4">
+    </video>
+
+    <div class="gender-overlay"></div>
+
+    <div class="gender-content">
+      <h2 data-text="МУЖЧИНАМ">МУЖЧИНАМ</h2>
+    </div>
+  </div>
+
+  <div class="gender-divider"></div>
+
+  <div class="gender-block female">
+    <video autoplay muted loop playsinline>
+      <source src="1470981_People_Fashion_3840x2160.mp4" type="video/mp4">
+    </video>
+
+    <div class="gender-overlay"></div>
+
+    <div class="gender-content">
+      <h2 data-text="ЖЕНЩИНАМ">ЖЕНЩИНАМ</h2>
+    </div>
+  </div>
+
+</section>
+
+
+<section id="catalog" class="products">
+  
+
+
+  <h2 class="scroll-element">Популярные товары</h2>
+
+  <div class="products-grid" id="productGrid">
+    <div class="product-card scroll-element">
+      <div class="product-img"><img src="p3-removebg-preview (1).png" alt="Товар"></div>
+      <h3>Название товара</h3>
+      <p>Короткое описание товара</p>
+      <div class="product-bottom">
+        <span class="price">5900₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card scroll-element">
+      <div class="product-img"><img src="p3-removebg-preview.png" alt="Товар"></div>
+      <h3>Название товара</h3>
+      <p>Короткое описание товара</p>
+      <div class="product-bottom">
+        <span class="price">6200₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card scroll-element">
+      <div class="product-img"><img src="p3-removebg-preview (1).png" alt="Товар"></div>
+      <h3>Название товара</h3>
+      <p>Короткое описание товара</p>
+      <div class="product-bottom">
+        <span class="price">4800₽</span>
+        <button class="add-btn">В корзину</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brands">
+  <h2 class="brands-title">Бренды</h2>
+
+  <div class="brands-slider">
+    <div class="brands-track">
+
+      <div class="brand">
+        <img src="pngimg.com - nike_PNG18.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Adidas-Logo.wine.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Puma-logo-PNG-Transparent-Background.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Zara_(retailer)-Logo.wine.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Louis_Vuitton_logo_and_wordmark.svg.png">
+        <span></span>
+      </div>
+
+      
+      <div class="brand">
+        <img src="gucci-1-logo-png-transparent.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Zara_(retailer)-Logo.wine.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Louis_Vuitton_logo_and_wordmark.svg.png">
+        <span></span>
+      </div>
+
+         
+      <div class="brand">
+        <img src="gucci-1-logo-png-transparent.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Zara_(retailer)-Logo.wine.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Louis_Vuitton_logo_and_wordmark.svg.png">
+        <span></span>
+      </div>
+
+         
+      <div class="brand">
+        <img src="gucci-1-logo-png-transparent.png">
+        <span></span>
+      </div>
+      
+
+      <div class="brand">
+        <img src="Zara_(retailer)-Logo.wine.png">
+        <span></span>
+      </div>
+
+      <div class="brand">
+        <img src="Louis_Vuitton_logo_and_wordmark.svg.png">
+        <span></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="holo-section">
+  <a href="product.html?cat=tshirt">
+    <div class="holo-card">
+      <img src="p3-removebg-preview (1).png" alt="">
+      
+      <div class="holo-text">NEW COLLECTION</div>
+    </div>
+  </a>
+  
+</section>
+
+
+<section class="cyber-stats">
+
+  <div class="stats-bg"></div>
+
+  <div class="stats-container">
+
+    <div class="stat-box">
+      <h2 class="stat-number" data-target="10000">0</h2>
+      <p>Клиентов</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="stat-number" data-target="50">0</h2>
+      <p>Брендов</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="stat-number" data-target="24">0</h2>
+      <p>Поддержка 24/7</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="stat-number" data-target="5">0</h2>
+      <p>Лет на рынке</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="newsletter-ultra">
+
+  <div class="newsletter-bg"></div>
+
+  <div class="newsletter-content">
+
+    <h2 class="newsletter-title" data-text="JOIN THE FUTURE">
+      JOIN THE FUTURE
+    </h2>
+
+    <p class="newsletter-sub">
+      Подпишись и получай эксклюзивные дропы и скидки первым.
+    </p>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Введите ваш email" required>
+      <button type="submit">Подписаться</button>
+    </form>
+
+  </div>
+
+</section>
+
+
+
+<section class="cyber-video-section">
+
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="1112338_Gen_z_Millenial_3840x2160.mp4" type="video/mp4">
+  </video>
+
+  <div class="video-overlay"></div>
+
+  <div class="video-content">
+    <h2>ENTER THE FUTURE</h2>
+    <p>Ощути энергию нового поколения</p>
+    <button class="video-btn">Смотреть коллекцию</button>
+  </div>
+
+</section>
+
+
+<section class="cyber-grid-section">
+
+  <div class="cyber-grid-bg"></div>
+
+  <div class="cyber-grid-content">
+    <h2>FUTURE IS NOW</h2>
+    <p>Технологии. Энергия. Стиль нового поколения.</p>
+  </div>
+
+</section>
+
+
+<footer class="footer">
+
+  
+  <div class="footer-bg"></div>
+
+  
+  <div class="footer-line"></div>
+
+  <div class="footer-container">
+
+    
+    <div class="footer-block">
+      <h2 class="footer-logo"><span>JSculptor</span>Store</h2>
+      <p>Будущее мужской моды. Киберпанк стиль и премиум качество.</p>
+    </div>
+
+    
+    <div class="footer-block">
+      <h3>Навигация</h3>
+      <a href="#home">Главная</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#categories">Категории</a>
+      <a href="#sale">Скидки</a>
+    </div>
+
+    
+    <div class="footer-block">
+      <h3>Подписка</h3>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Введите email">
+        <button type="submit">OK</button>
+      </form>
+    </div>
+
+  
+    <div class="footer-block">
+      <h3>Соцсети</h3>
+      <div class="socials">
+        <a href="https://www.instagram.com/js_culptor?igsh=MW4yM3J0NDM5NWk2dA==">IG</a>
+        <a href="#">TG</a>
+        <a href="#">TT</a>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="footer-bottom">
+    <p>© 2026 JSculptor Store</p>
+    <button id="scrollTopBtn">↑</button>
+  </div>
+
+</footer>
+
+
+
+<div id="product-modal" class="product-modal">
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal-content modal-large">
+    <span class="modal-close" id="modal-close">✖</span>
+    <div class="modal-main">
+      <div class="modal-image">
+        <img src="" id="main-img" alt="Фото товара">
+      </div>
+      <div class="modal-info">
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <p class="modal-price"></p>
+        <div class="modal-sizes">
+          <label>Размер:</label>
+          <div class="size-options">
+            <button data-size="S">S</button>
+            <button data-size="M">M</button>
+            <button data-size="L">L</button>
+            <button data-size="XL">XL</button>
+            <button data-size="2XL">2XL</button>
+          </div>
+        </div>
+        <button class="modal-add-btn" id="add-to-cart-modal">Добавить в корзину</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="JSculptor.js"></script>
+
+
+
+<script>
+
+let products = JSON.parse(localStorage.getItem("products")) || [];
+
+document.getElementById("scrollTopBtn").onclick = () => { window.scrollTo({ top: 0, behavior: "smooth" }); 
+}; const scrollElements = document.querySelectorAll('.scroll-element'); const elementInView = (el, offset = 100) => 
+{ const elementTop = el.getBoundingClientRect().top; return elementTop <= (window.innerHeight - offset); }; const displayScrollElement =
+ (element) => { element.classList.add('show'); }; const handleScrollAnimation = () => { scrollElements.forEach((el) => { if (elementInView(el, 100)) 
+  { displayScrollElement(el); } }); }; window.addEventListener('scroll', handleScrollAnimation); // Запуск один раз при загрузке страницы handleScrollAnimation();
+
+/* ======= JS НОВОЙ КОРЗИНЫ + МОДАЛКА ======= */
+/* ======= JS НОВОЙ КОРЗИНЫ + МОДАЛКА + АНИМАЦИЯ ПОЛЕТА ======= */
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+const cartSidebar = document.getElementById('cart-sidebar');
+const cartBtn = document.getElementById('cart-btn');
+const closeCartBtn = document.getElementById('close-cart');
+const overlay = document.getElementById('cart-overlay');
+const cartItemsContainer = document.querySelector('.cart-items');
+const totalPriceEl = document.querySelector('.total-price');
+const cartCount = document.querySelector('.cart-count');
+
+// ОБНОВЛЕНИЕ КОРЗИНЫ
+function updateCart() {
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+  let count = 0;
+  if(cart.length === 0){
+    cartItemsContainer.innerHTML = '<p>Корзина пуста</p>';
+  }
+  cart.forEach((item, i) => {
+    total += item.price * item.qty;
+    count += item.qty;
+    cartItemsContainer.innerHTML += `
+      <div class="cart-item">
+        <p>${item.name}</p>
+        <div>
+          <button onclick="changeQty(${i}, -1)">-</button>
+          ${item.qty}
+          <button onclick="changeQty(${i}, 1)">+</button>
+        </div>
+        <span>${item.price * item.qty}₽</span>
+      </div>
+    `;
+  });
+  totalPriceEl.textContent = total + '₽';
+  cartCount.textContent = count;
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function changeQty(i, d){
+  cart[i].qty += d;
+  if(cart[i].qty <=0) cart.splice(i,1);
+  updateCart();
+}
+
+// Показать/скрыть корзину
+cartBtn.onclick = () => { cartSidebar.classList.add('active'); overlay.classList.add('active'); };
+closeCartBtn.onclick = () => { cartSidebar.classList.remove('active'); overlay.classList.remove('active'); };
+overlay.onclick = () => { cartSidebar.classList.remove('active'); overlay.classList.remove('active'); };
+
+// Очистить корзину
+document.getElementById('clear-cart-btn').onclick = () => { cart = []; updateCart(); };
+
+// Загрузка корзины при старте
+document.addEventListener('DOMContentLoaded', updateCart);
+
+// Toast уведомления
+function showToast(text){
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerText = text;
+  document.body.appendChild(toast);
+  setTimeout(()=>toast.classList.add('show'),10);
+  setTimeout(()=>{ toast.classList.remove('show'); setTimeout(()=>toast.remove(),300); },2000);
+}
+
+// АНИМАЦИЯ ПОЛЕТА В КОРЗИНУ
+function flyToCart(img){
+  const cartIcon = document.getElementById('cart-btn');
+  const imgRect = img.getBoundingClientRect();
+  const cartRect = cartIcon.getBoundingClientRect();
+  const clone = img.cloneNode(true);
+  clone.style.position = 'fixed';
+  clone.style.zIndex = 1000;
+  clone.style.top = imgRect.top+'px';
+  clone.style.left = imgRect.left+'px';
+  clone.style.width = imgRect.width+'px';
+  clone.style.transition = 'all 0.7s ease-in-out';
+  document.body.appendChild(clone);
+  setTimeout(()=>{
+    clone.style.top = cartRect.top+'px';
+    clone.style.left = cartRect.left+'px';
+    clone.style.width = '20px';
+    clone.style.opacity = '0.5';
+  },10);
+  setTimeout(()=>clone.remove(),700);
+}
+
+// Добавление из карточки
+document.addEventListener('click', e=>{
+  if(e.target.classList.contains('add-btn')){
+    const card = e.target.closest('.product-card');
+    const name = card.querySelector('h3').textContent;
+    const price = parseInt(card.querySelector('.price').textContent);
+    const existing = cart.find(item => item.name === name);
+    if(existing) existing.qty++; else cart.push({name, price, qty:1});
+    updateCart();
+    showToast("Товар добавлен в корзину");
+    flyToCart(card.querySelector('img'));
+  }
+});
+
+// МОДАЛЬНОЕ ОКНО
+const modal = document.getElementById('product-modal');
+const modalOverlay = document.getElementById('modal-overlay');
+const modalClose = document.getElementById('modal-close');
+const mainImg = document.getElementById('main-img');
+const modalTitle = modal.querySelector('.modal-title');
+const modalDesc = modal.querySelector('.modal-desc');
+const modalPrice = modal.querySelector('.modal-price');
+const sizeButtons = modal.querySelectorAll('.size-options button');
+const addModalBtn = document.getElementById('add-to-cart-modal');
+let selectedSize = null;
+
+// Открытие модалки
+document.querySelectorAll('.product-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const imgSrc = card.querySelector('img').src;
+    mainImg.src = imgSrc;
+    modalTitle.textContent = card.querySelector('h3').textContent;
+    modalDesc.textContent = card.querySelector('p').textContent;
+    modalPrice.textContent = card.querySelector('.price').textContent;
+    sizeButtons.forEach(b => b.classList.remove('active'));
+    selectedSize = null;
+    modal.classList.add('show');
+  });
+});
+modalClose.onclick = () => modal.classList.remove('show');
+modalOverlay.onclick = () => modal.classList.remove('show');
+sizeButtons.forEach(btn => btn.onclick = ()=>{
+  sizeButtons.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedSize = btn.dataset.size;
+});
+
+// Добавление в корзину из модалки
+addModalBtn.onclick = () => {
+  if(!selectedSize){ alert("Выберите размер!"); return; }
+  const name = modalTitle.textContent + " [" + selectedSize + "]";
+  const price = parseInt(modalPrice.textContent);
+  const existing = cart.find(item => item.name===name);
+  if(existing) existing.qty++; else cart.push({name, price, qty:1});
+  updateCart();
+  showToast("Товар добавлен в корзину");
+  flyToCart(mainImg);
+  modal.classList.remove('show');
+};
+
+// Checkout / Telegram
+document.querySelector('.checkout-btn').onclick = async ()=>{
+  if(!cart.length){ alert("Корзина пуста!"); return; }
+  const name = prompt("Введите ваше имя:");
+  const phone = prompt("Введите телефон:");
+  if(!name || !phone) return;
+  let message = `Новый заказ:\nИмя: ${name}\nТелефон: ${phone}\n\nТовары:\n`;
+  let total = 0;
+  cart.forEach((item,i)=>{
+    message += `${i+1}. ${item.name} - ${item.qty} шт. - ${item.price*item.qty}₽\n`;
+    total += item.price*item.qty;
+  });
+  message += `\nИтого: ${total}₽`;
+  const token = "8664058553:AAF_g8JWxldE5J3q_iW2ZoOwb5ot41sQ_qs";
+  const chat_id = "7291698742";
+  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(message)}`;
+  try{ await fetch(url); showToast("Заказ отправлен в Telegram!"); cart=[]; updateCart(); }
+  catch(e){ alert("Ошибка отправки заказа!"); console.error(e); }
+};
+
+// Toast
+function showToast(text){
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerText = text;
+  document.body.appendChild(toast);
+  setTimeout(()=>toast.classList.add('show'),10);
+  setTimeout(()=>{ toast.classList.remove('show'); setTimeout(()=>toast.remove(),300); },2000);
+}
+
+// Checkout / Telegram
+document.querySelector('.checkout-btn').onclick = async ()=>{
+  if(!cart.length){ alert("Корзина пуста!"); return; }
+  const name = prompt("Введите ваше имя:");
+  const phone = prompt("Введите телефон:");
+  if(!name || !phone) return;
+  let message = `Новый заказ:\nИмя: ${name}\nТелефон: ${phone}\n\nТовары:\n`;
+  let total = 0;
+  cart.forEach((item,i)=>{
+    message += `${i+1}. ${item.name} - ${item.qty} шт. - ${item.price*item.qty}₽\n`;
+    total += item.price*item.qty;
+  });
+  message += `\nИтого: ${total}₽`;
+  const token = "8664058553:AAF_g8JWxldE5J3q_iW2ZoOwb5ot41sQ_qs";
+  const chat_id = "7291698742";
+  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(message)}`;
+  try{ await fetch(url); showToast("Заказ отправлен в Telegram!"); cart=[]; updateCart(); }
+  catch(e){ alert("Ошибка отправки заказа!"); console.error(e); }
+};
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const loader = document.getElementById("cyberLoader");
+  const progress = document.getElementById("loaderProgress");
+
+  let width = 0;
+
+  const interval = setInterval(()=>{
+    width += Math.random() * 15;
+
+    if(width >= 100){
+      width = 100;
+      clearInterval(interval);
+
+      setTimeout(()=>{
+        loader.classList.add("fade-out");
+      }, 500);
+    }
+
+    progress.style.width = width + "%";
+
+  }, 150);
+
+});
+
+
+
+
+const counters = document.querySelectorAll('.stat-number');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const counter = entry.target;
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+
+      const speed = target / 80;
+
+      const update = () => {
+        if(count < target){
+          count += speed;
+          counter.innerText = Math.floor(count);
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target;
+          if(target === 10000) counter.innerText = "10 000+";
+          if(target === 50) counter.innerText = "50+";
+          if(target === 24) counter.innerText = "24/7";
+          if(target === 5) counter.innerText = "5+";
+        }
+      };
+
+      update();
+      observer.unobserve(counter);
+    }
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(counter => observer.observe(counter));
+
+
+const gridSection = document.querySelector(".cyber-grid-section");
+
+gridSection.addEventListener("mousemove", e => {
+  const rect = gridSection.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / rect.width) * 100;
+  const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+  gridSection.style.setProperty('--x', x + '%');
+  gridSection.style.setProperty('--y', y + '%');
+});
+
+
+window.addEventListener("scroll", function(){
+  const header = document.querySelector(".cyber-header");
+  if(window.scrollY > 50){
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+
+const splitSection = document.querySelector(".gender-split-section");
+
+splitSection.addEventListener("mousemove", e => {
+
+  const blocks = document.querySelectorAll(".gender-block");
+
+  const x = (window.innerWidth / 2 - e.clientX) / 40;
+  const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+  blocks.forEach(block => {
+    block.style.transform = `translate(${x}px, ${y}px)`;
+  });
+
+});
+
+</script>
+
+</body>
+</html>
+
+
